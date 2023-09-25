@@ -8,3 +8,7 @@
 <code>GET /heroes/id</code>- Petición para obtener un héroe en específico
 
 <code>POST /heroes/</code>- Petición para guardar información de un héroe
+
+<code>UPDATE /heroes/actualizar</code>- Petición para actualiazar información de un héroe
+
+<code>DELETE /heroes/id</code>- Petición para eliminar información de un héroe

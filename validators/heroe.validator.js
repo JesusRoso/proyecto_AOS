@@ -8,7 +8,7 @@ export const heroeValidator = checkSchema({
     }
 } ,["params"]);
 
-export const sendHeroeValidator = checkSchema({
+export const sendAndUpdateHeroeValidator = checkSchema({
   nombre: {
     errorMessage: "Nombre invalido",
     notEmpty: true,
