@@ -4,12 +4,14 @@ import { exports } from "./default.js";
 import router from "../routes/index.routes.js";
 import pgService from '../services/pg.service.js';
 import middle from '../middlewares/index.middleware.js';
+import cors from 'cors'
 
 export default class Server{
 
     constructor(){
         this.app = express();
         this.port = exports.port;
+        this.app.use(cors())
     }
 
     async connectionDB(){
