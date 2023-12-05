@@ -4,6 +4,7 @@ import { Router } from "express";
 
 const router = Router();
 
-router.use('/heroes', verifyToken);
+router.use('/heroes');
+//router.use('/heroes', verifyToken);
 
 export default router;

@@ -30,9 +30,9 @@ export async function getHeroeById (req, res){
 
 export async function saveHeroe (req, res){
     try {
-        let {id_hero, nombre, alter_ego} = req.body;
+        let {id_hero, nombre, altura, peso, experiencia, hp, ataque, defensa, ataque_especial, defensa_especial, velocidad, habilidad} = req.body;
 
-        let data = await saveHeroeModel(id_hero, nombre, alter_ego);
+        let data = await saveHeroeModel(id_hero, nombre, altura, peso, experiencia, hp, ataque, defensa, ataque_especial, defensa_especial, velocidad, habilidad);
 
         if (!data) {
             res.status(400).json({ success: false, msg: 'No hay data para guardar.' });

@@ -20,11 +20,12 @@ export const getHeroeModelById = async (id) => {
     }
 }
 
-export const saveHeroeModel = async(id_hero, nombre, alter_ego) => {
+export const saveHeroeModel = async(id_hero, nombre, altura, peso, experiencia, hp, ataque, defensa, ataque_especial, defensa_especial, velocidad, habilidad) => {
     const pg =  new pgService(); 
     try{
         await pg.connection.query
-        ("INSERT INTO heroe (id_hero, nombre, alter_ego) values($1, $2, $3) ",[id_hero, nombre, alter_ego]);
+        ("INSERT INTO heroe (id_hero, nombre, altura, peso, experiencia, hp, ataque, defensa, ataque_especial, defensa_especial, velocidad, habilidad) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) ",
+        [id_hero, nombre, altura, peso, experiencia, hp, ataque, defensa, ataque_especial, defensa_especial, velocidad, habilidad]);
         return 'Registro realizado exitosamente';
     }
     catch(error){
