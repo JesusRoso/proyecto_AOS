@@ -33,11 +33,12 @@ export const saveHeroeModel = async(id_hero, nombre, altura, peso, experiencia, 
     }
 }
 
-export const updateHeroModel = async(id_hero, nombre, alter_ego)=>{
+export const updateHeroModel = async(id_hero, nombre, altura, peso, experiencia, hp, ataque, defensa, ataque_especial, defensa_especial, velocidad, habilidad)=>{
     const pg =  new pgService(); 
     try{
         await pg.connection.query
-        (`UPDATE heroe SET nombre = $2, alter_ego = $3 WHERE id_hero = $1`,[id_hero, nombre, alter_ego]); 
+        (`UPDATE heroe SET nombre = $2, altura = $3, peso = $4, experiencia = $5, hp = $6, ataque = $7, defensa = $8, ataque_especial = $9, defensa_especial = $10, velocidad = $11, habilidad = $12  WHERE id_hero = $1`,
+        [id_hero, nombre, altura, peso, experiencia, hp, ataque, defensa, ataque_especial, defensa_especial, velocidad, habilidad]); 
         return 'Registro actualizado exitosamente';
     }
     catch(error){

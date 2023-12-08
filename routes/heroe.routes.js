@@ -8,7 +8,7 @@ const router = Router();
 router.get("/" , getHeroes );
 router.get("/:id", validate(heroeValidator) , getHeroeById);
 router.post("/", saveHeroe);
-router.put("/actualizar",validate(sendAndUpdateHeroeValidator),updateHero);
+router.put("/actualizar",updateHero);
 router.delete("/:id",validate(heroeValidator) , deleteHeroById);
 
 export default router;
